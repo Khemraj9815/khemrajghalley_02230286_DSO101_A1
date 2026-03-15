@@ -5,7 +5,7 @@ services:
     dockerfilePath: ./backend/Dockerfile
     envVars:
       - key: DB_HOST
-        value: dpg-d6r5omvdiees73c2nhk0-a.c123.render.com
+        value: dpg-d6r5omvdiees73c2nhk0-a
       - key: DB_USER
         value: todouser
       - key: DB_PASSWORD
@@ -25,6 +25,6 @@ services:
     dockerfilePath: ./frontend/Dockerfile
     envVars:
       - key: REACT_APP_API_URL
-        value: https://be-todo.onrender.com
+        value: https://be-todo-02230286.onrender.com
       - key: NODE_ENV
         value: production
