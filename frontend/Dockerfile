@@ -4,15 +4,15 @@ FROM node:18-alpine AS builder
 WORKDIR /app
 
 # Copy package files
-COPY package*.json ./
+COPY frontend/package*.json ./
 
 # Install dependencies
 RUN npm install --legacy-peer-deps
 
 # Copy application code
-COPY public ./public
-COPY src ./src
-COPY server.js ./
+COPY frontend/public ./public
+COPY frontend/src ./src
+COPY frontend/server.js ./
 
 # Build the application
 RUN npm run build
@@ -32,8 +32,8 @@ COPY --from=builder /app/server.js ./
 COPY --from=builder /app/package*.json ./
 
 # Copy Nginx configuration
-COPY nginx.conf /etc/nginx/nginx.conf
-COPY default.conf /etc/nginx/conf.d/default.conf
+COPY frontend/nginx.conf /etc/nginx/nginx.conf
+COPY frontend/default.conf /etc/nginx/conf.d/default.conf
 
 # Create non-root user
 RUN addgroup -g 1001 -S nodejs && adduser -S nodejs -u 1001
