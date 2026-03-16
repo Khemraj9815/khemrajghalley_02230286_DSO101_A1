@@ -12,6 +12,7 @@ RUN npm install --legacy-peer-deps
 # Copy application code
 COPY public ./public
 COPY src ./src
+COPY server.js ./
 
 # Build the application
 RUN npm run build
@@ -27,14 +28,12 @@ RUN apk add --no-cache nginx curl
 # Copy built files from builder
 COPY --from=builder /app/build ./build
 COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/server.js ./
+COPY --from=builder /app/package*.json ./
 
 # Copy Nginx configuration
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY default.conf /etc/nginx/conf.d/default.conf
-
-# Create a simple Node.js server to serve static files
-COPY server.js ./
-COPY package*.json ./
 
 # Create non-root user
 RUN addgroup -g 1001 -S nodejs && adduser -S nodejs -u 1001
