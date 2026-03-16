@@ -6,7 +6,7 @@ services:
     dockerfilePath: ./backend/Dockerfile
     envVars:
       - key: DB_HOST
-        value: dpg-d6r5omvdiees73c2nhk0-a
+        value: dpg-d6r5omvdiees73c2nhk0-a.postgres.render.com
       - key: DB_USER
         value: todouser
       - key: DB_PASSWORD
