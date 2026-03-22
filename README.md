@@ -364,10 +364,10 @@ The application is fully deployed and operational on the internet. The automated
 
 ```
 Docker Hub:      https://hub.docker.com/r/khemraj9815
-Frontend:        https://fe-todo.onrender.com
-Backend:         https://be-todo.onrender.com
-GitHub:          https://github.com/YOUR_USERNAME/todo-app-dso101
-Render:          https://dashboard.render.com
+Frontend:        https://fe-todo-02230286.onrender.com
+Backend:         https://be-todo-cjei.onrender.com
+GitHub:          https://github.com/Khemraj9815/khemrajghalley_02230286_DSO101_A1.git
+Blueprint:          https://dashboard.render.com/blueprint/exs-d6r8vivafjfc73f2t1p0
 ```
 
 ### Docker Commands Reference
@@ -392,7 +392,7 @@ docker-compose up
 git init
 git add .
 git commit -m "Initial commit"
-git remote add origin https://github.com/USERNAME/todo-app-dso101.git
+git remote add origin https://github.com/Khemraj9815/khemrajghalley_02230286_DSO101_A1.git
 git branch -M main
 git push -u origin main
 
