@@ -243,37 +243,61 @@ docker push khemraj9815/be-todo:02230286
 ---
 
 **render.yaml in Repository**
-<!-- add screenshot -->
+```
+services:
+  - type: web
+    name: be-todo
+    env: docker
+    plan: free
+    dockerfilePath: ./backend/Dockerfile
+    envVars:
+      - key: DB_HOST
+        value: dpg-d6r5omvdiees73c2nhk0-a.singapore-postgres.render.com
+      - key: DB_USER
+        value: todouser
+      - key: DB_PASSWORD
+        value: xiYh4zF6CL1eKdEedArYynxksHIxg6Zw
+      - key: DB_NAME
+        value: tododb_oefi
+      - key: DB_PORT
+        value: "5432"
+      - key: PORT
+        value: "10000"
+      - key: NODE_ENV
+        value: production
+
+  - type: web
+    name: fe-todo
+    env: docker
+    plan: free
+    dockerfilePath: ./frontend/Dockerfile
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://be-todo-02230286.onrender.com
+      - key: NODE_ENV
+        value: production
+```
 
 ---
 
 ### Render Blueprint Deployment
-<!-- add screenshot -->
-
-
-**Blueprint Created**
-<!-- add screenshot -->
-
+![15](./assets/15.png)
 
 ---
 
 ####  Automated Services Deployment
 
 **Services Created by Blueprint:**
-<!-- add screenshot -->
+![alt text](./assets/16.png)
 
 **Service 1: be-todo (Backend)**
 
-<!-- add screenshot -->
+![alt text](./assets/18.png)
+![alt text](./assets/19.png)
 
 **Service 2: fe-todo (Frontend)**
-<!-- add screenshot -->
-
-
----
-
-**Services Deployed from Blueprint**
-
+![alt text](./assets/16.png)
+![alt text](./assets/17.png)
 
 ---
 
@@ -301,7 +325,7 @@ git push origin main
 ---
 
 #### Automatic Redeployment Verification
-<!-- add screenshot -->
+![yaml](./assets/15.png)
 
 
 **Production (render.yaml):**
